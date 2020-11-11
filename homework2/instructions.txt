@@ -1,0 +1,44 @@
+1. Create a new folder in your week8 repo named hw_2 || homework2 (whatever you'd like) TIP: mkdir hw_2
+
+2. cd inside your new hw_2, in there run npm init. TIP: npm init -y prevents you from answering all the questions if you're just going to use the defaults
+
+3. Create a new file there named os.js. TIP: touch os.js
+
+4. In your os.js require the "os" module. We're going to use this to check the specs on our server. (your machine)
+   - Write to the console all of your cpu information HINT: os.cpus()
+   - Write to the console your current operating system HINT: os.platform(), win32 = windows darwin = mac
+   - Write to the console your CPU architecture HINT: os.arch(), x64 = 64 bit OS; x86 = 32 bit OS;
+   - Write the total amount of memory on your server to the console HINT: os.totalmem()
+   - Write the total uptime on your machine to the console HINT: os.uptime()
+     NOTE: When I execute my file I will see all of my computer specs. Not yours b/c the file is being executed on my machine.
+     BONUS: Write your computer specs to a file called specs.txt Check out the attached image and mimic a similar format. HINT: You'll want the path & fs module for this
+5. Create a new file named url.js TIP: touch url.js
+
+6. In your url.js file...
+
+   - Create a variable request set it to the string "http://my-website.com/about/info?userid=1&page=3"
+   - Create another variable named myURL set it equal to an object instantiated from the URL class. HINT: you do NOT need to require the URL module to call the URL constructor.
+   - Write using properties of the myURL object you just created "http://my-website.com/" to the console. HINT: href
+   - Write using properties of the myURL object you just created "my-website.com" to the console. HINT: host
+   - Write using properties of the myURL object you just created "/about/info" to the console. HINT: pathname
+   - Using the searchParams property of the myURL object call the get() method getting the userid query string parameter value HINT: the value that the get() method should return is 1
+   - Using the searchParams property of the myURL object call the has() method to check if the query string contains a page parameter HINT: Should return true as our url does have a page
+
+7. Create a new file named http.js TIP: touch http.js
+
+8. In your http.js file...
+
+   - Require in the http module
+   - create a variable named server and set it equal the http module calling the createServer() method
+     - the callback passed into createServer() should have two parameters request & response. For every request made to the server the server should respond with "<h1>Hello World</h1>"
+   - Instruct the server to listen on port 3000.
+   - Check your work, http://localhost:3000 should have a single h1 with hello world inside, any path specified should also return this. i.e. http://localhost:3000/about should also return an h1 with hello world inside
+
+9. Create a new file named cli.js TIP: touch cli.js
+
+10. In your cli.js file...
+    - require in the readline module
+    - Add this code in --> const rl = readline.createInterface({ input: process.stdin, output: process.stdout});
+    - Write to the console "Hello what is your name?\n"
+    - Add a listener on rl listening for the 'line' event. In the callback check if user input equals "exit" if so call rl.close() else write to the console "Nice to meet you (userInput)\n" then console.log("Hello what is your name?\n) again
+    - Add another listener on rl, this time listening for the 'close' event, the callback should just write "goodbye!" to the console.

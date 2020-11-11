@@ -1,0 +1,7 @@
+
+Number of CPUs:     8
+Number of CPUs:     undefined
+Platform:           win32
+Architecture:       x64
+Total Memory:       34300313600
+Uptime:             17661
