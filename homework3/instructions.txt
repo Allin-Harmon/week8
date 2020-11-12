@@ -1,0 +1,52 @@
+Starter HTML files: https://github.com/HBull5/starter-files-node-hw3
+Video of behavior: https://youtu.be/Hi86kpQcKHA
+
+1. Create a new folder in your week8 repo named hw_3 || homework_3
+
+2. run npm init
+
+3. install express
+
+4. install mocha TIP: you can install globally with "npm install -g mocha"
+
+5. In your package.json file make sure scripts section looks like this "scripts": { "test": "mocha" }
+
+6. Create a folder named test TIP: mkdir test
+
+7. In your root directory (hw_3/homework_3) create a file named foo.js...
+
+    - create a function named foo
+    - the function should return the string "bar"
+    - using module.exports export the foo function
+
+8. In your test folder create a file named test.js...
+
+    - require in the assert module
+    - require in your foo.js file HINT: remember this is a custom module, also it is outside of the directory we a requiring it into
+    - If you can try to look at the image attached below and re-create it without following these steps.
+    - Next use the describe() function, the first parameter it should take is 'foo() should return "bar"', the second parameter should be a callback function. Inside the callback function...
+        - call the it() function, the first parameter should be 'foo() should return "bar"', the second parameter should be a callback, Inside the callback function...
+            - Using the assert module you required call the strictEqual() method pass in foo() and 'bar'
+        - call another it() function, the first parameter should be 'foo() should return "bat"' the second parameter should be a callback, inside the callback function...
+            - Using the assert module you required call the strictEqual() method pass in foo() and 'bat'
+    - run npm test in the console if you've done everything correctly you'll see the same results as the image attached below
+
+9. Create an index.js file TIP: touch index.js
+
+10. require in express
+
+11. Initialize express to the variable app
+
+12. require in the path module
+
+13. Set a variable port to 3000
+
+14. Add in this line of middleware right below: app.use(express.urlencoded({ extended: true })); TIP: this will allow us to pull in form data
+
+15. Create an endpoint for a GET request on "/" this should send the provided login.html file HINT: you'll want to use the res.sendFile() method
+
+16. Create an endpoint for a GET request to "/:page", this should check if the parameter is equal to 1, 2, or 3. If req.params.page is 1 then you should load the provided page_1.html file, if req.params.page is 2 then you should load the page_2.html file, etc. HINT: req.params.anything will always come in as a string so make sure you're using == and not ===. You'll want to use the res.sendFile() method to send the appropriate page_X.html file
+
+17. Create an endpoint for a POST request to "/", using the response object call the end() method and pass in "<h1>This is (username they typed in on the login page)'s page</h1>"
+
+18. Finally listen on the PORT you defined above. Optionally pass in a callback to write to the console what port the server is listening on.
